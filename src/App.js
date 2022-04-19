@@ -1,11 +1,14 @@
 import "./App.css";
+import CartWidget from "./components/cart/CartWidget";
 import ItemListContainer from "./components/container/ItemListContainer";
 import NavBar from "./components/navigation-bottom/NavBar";
 
 function App() {
   return (
     <>
-      <NavBar />
+      <NavBar>
+        <CartWidget />
+      </NavBar>
       <ItemListContainer text="Hello world!..." />
     </>
   );
