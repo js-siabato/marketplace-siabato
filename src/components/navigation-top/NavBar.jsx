@@ -1,4 +1,5 @@
 import logo from "../../logo.svg";
+import CartWidget from "../cart/CartWidget";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
@@ -13,7 +14,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function NavBar(props) {
+function NavBar() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -62,7 +63,7 @@ function NavBar(props) {
                   </div>
                 </div>
               </div>
-              {props.children}
+              <CartWidget />
             </div>
           </div>
 
