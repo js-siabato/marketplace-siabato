@@ -1,5 +1,5 @@
-import logo from "../../logo.svg";
-import CartWidget from "../cart/CartWidget";
+import logo from "../logo.svg";
+import CartWidget from "./CartWidget";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
