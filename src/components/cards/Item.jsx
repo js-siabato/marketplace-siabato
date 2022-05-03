@@ -5,7 +5,7 @@ const Item = ({ productData }) => {
         <a href="/">
           <img
             className="rounded-t-lg p-8"
-            src={require(`../${productData.image}`)}
+            src={require(`../../${productData.image}`)}
             alt={productData.name}
           />
         </a>

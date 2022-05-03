@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { products as productsData } from "../data/products";
-// import Item from "./Item";
+import { products as productsData } from "../../data/products";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -29,9 +28,6 @@ const ItemListContainer = () => {
       </h1>
 
       <div class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
-        {/* {products.map((product) => (
-          <Item key={product.id} productData={product} />
-        ))} */}
         <ItemList products={productsState} />
       </div>
     </section>
