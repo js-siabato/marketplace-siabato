@@ -1,15 +1,10 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const ItemCategoryContainer = () => {
   return (
     <div class="flex justify-center items-center">
       <div class="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
         <div class="flex flex-col jusitfy-center items-center space-y-10">
-          <div class="flex flex-col justify-center items-center ">
-            <h1 class="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800 dark:text-white">
-              Shop By Category
-            </h1>
-          </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 md:gap-x-8 w-full">
             <div class="relative group flex justify-center items-center h-full w-full">
               <img
@@ -18,7 +13,7 @@ const ItemCategoryContainer = () => {
                 alt="girl"
               />
               <button class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
-                Women
+                <Link to="category/1">Mujer</Link>
               </button>
               <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
             </div>
@@ -31,7 +26,7 @@ const ItemCategoryContainer = () => {
                   alt="shoe"
                 />
                 <button class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
-                  Shoes
+                  <Link to="category/2">Zapatos</Link>
                 </button>
                 <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
               </div>
@@ -42,7 +37,7 @@ const ItemCategoryContainer = () => {
                   alt="watch"
                 />
                 <button class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
-                  Watches
+                  <Link to="category/3">Relojes</Link>
                 </button>
                 <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
               </div>
@@ -55,7 +50,7 @@ const ItemCategoryContainer = () => {
                 alt="girl"
               />
               <button class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
-                Accessories
+                <Link to="category/4">Accesorios</Link>
               </button>
               <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
             </div>
@@ -71,7 +66,7 @@ const ItemCategoryContainer = () => {
                 alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2"
               />
               <button class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
-                Accessories
+                <Link to="category/4">Accesorios</Link>
               </button>
               <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
             </div>
@@ -88,7 +83,7 @@ const ItemCategoryContainer = () => {
               alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2"
             />
             <button class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
-              Accessories
+              <Link to="category/4">Accesorios</Link>
             </button>
             <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
           </div>

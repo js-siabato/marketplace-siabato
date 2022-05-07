@@ -1,112 +1,29 @@
-const ItemDetail = () => {
+const ItemDetail = ({ productData }) => {
   return (
     <>
-      <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
+      <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
         <img
-          class="w-full"
-          alt="of a girl posing"
-          src="https://i.ibb.co/QMdWfzX/component-image-one.png"
-        />
-        <img
-          class="mt-6 w-full"
-          alt="of a girl posing"
-          src="https://i.ibb.co/qxkRXSq/component-image-two.png"
+          className="w-full"
+          src={`../../assets/img/${productData.image}`}
+          alt={productData.name}
         />
       </div>
-      <div class="md:hidden">
+      <div className="md:hidden">
         <img
-          class="w-full"
-          alt="of a girl posing"
-          src="https://i.ibb.co/QMdWfzX/component-image-one.png"
+          className="w-full"
+          src={`../../assets/img/${productData.image}`}
+          alt={productData.name}
         />
-        <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
-          <img
-            alt="tag-one"
-            class="md:w-48 md:h-48 w-full"
-            src="https://i.ibb.co/cYDrVGh/Rectangle-245.png"
-          />
-          <img
-            alt="tag-one"
-            class="md:w-48 md:h-48 w-full"
-            src="https://i.ibb.co/f17NXrW/Rectangle-244.png"
-          />
-          <img
-            alt="tag-one"
-            class="md:w-48 md:h-48 w-full"
-            src="https://i.ibb.co/cYDrVGh/Rectangle-245.png"
-          />
-          <img
-            alt="tag-one"
-            class="md:w-48 md:h-48 w-full"
-            src="https://i.ibb.co/f17NXrW/Rectangle-244.png"
-          />
-        </div>
       </div>
-      <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-        <div class="border-b border-gray-200 pb-6">
-          <p class="text-sm leading-none text-gray-600 dark:text-gray-300 ">
-            Balenciaga Fall Collection
-          </p>
-          <h1 class="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">
-            Balenciaga Signature Sweatshirt
+      <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
+        <div className="border-b border-gray-200 pb-6">
+          <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">
+            {productData.name}
           </h1>
         </div>
-        <div class="py-4 border-b border-gray-200 flex items-center justify-between">
-          <p class="text-base leading-4 text-gray-800 dark:text-gray-300">
-            Colours
-          </p>
-          <div class="flex items-center justify-center">
-            <p class="text-sm leading-none text-gray-600 dark:text-gray-300">
-              Smoke Blue with red accents
-            </p>
-            <div class="w-6 h-6 bg-gradient-to-b from-gray-900 to-indigo-500 ml-3 mr-4 cursor-pointer"></div>
-            <svg
-              class="cursor-pointer text-gray-300 dark:text-white"
-              width="6"
-              height="10"
-              viewBox="0 0 6 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 1L5 5L1 9"
-                stroke="currentColor"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
-        <div class="py-4 border-b border-gray-200 flex items-center justify-between">
-          <p class="text-base leading-4 text-gray-800 dark:text-gray-300">
-            Size
-          </p>
-          <div class="flex items-center justify-center">
-            <p class="text-sm leading-none text-gray-600 dark:text-gray-300 mr-3">
-              38.2
-            </p>
-            <svg
-              class="text-gray-300 dark:text-white cursor-pointer"
-              width="6"
-              height="10"
-              viewBox="0 0 6 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 1L5 5L1 9"
-                stroke="currentColor"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
-        <button class="dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-gray-800 w-full py-4 hover:bg-gray-700 focus:outline-none">
+        <button className="dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-gray-800 w-full py-4 hover:bg-gray-700 focus:outline-none">
           <svg
-            class="mr-3 text-white dark:text-gray-900"
+            className="mr-3 text-white dark:text-gray-900"
             width="16"
             height="17"
             viewBox="0 0 16 17"
@@ -142,110 +59,15 @@ const ItemDetail = () => {
               stroke-linejoin="round"
             />
           </svg>
-          Check availability in store
+          Add Cart
         </button>
         <div>
-          <p class="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7">
-            It is a long established fact that a reader will be distracted by
-            thereadable content of a page when looking at its layout. The point
-            of usingLorem Ipsum is that it has a more-or-less normal
-            distribution of letters.
+          <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7">
+            <strong>Price:</strong> <br /> ${productData.price}
           </p>
-          <p class="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">
-            Product Code: 8BN321AF2IF0NYA
+          <p className="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">
+            <strong>Description:</strong> <br /> {productData.description}
           </p>
-          <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">
-            Length: 13.2 inches
-          </p>
-          <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">
-            Height: 10 inches
-          </p>
-          <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">
-            Depth: 5.1 inches
-          </p>
-          <p class="md:w-96 text-base leading-normal text-gray-600 dark:text-gray-300 mt-4">
-            Composition: 100% calf leather, inside: 100% lamb leather
-          </p>
-        </div>
-        <div>
-          <div class="border-t border-b py-4 mt-7 border-gray-200">
-            <div
-              data-menu
-              class="flex justify-between items-center cursor-pointer"
-            >
-              <p class="text-base leading-4 text-gray-800 dark:text-gray-300">
-                Shipping and returns
-              </p>
-              <button
-                class="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded"
-                aria-label="show or hide"
-              >
-                <svg
-                  class="transform text-gray-300 dark:text-white"
-                  width="10"
-                  height="6"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 1L5 5L1 1"
-                    stroke="currentColor"
-                    stroke-width="1.25"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 dark:text-gray-300"
-              id="sect"
-            >
-              You will be responsible for paying for your own shipping costs for
-              returning your item. Shipping costs are nonrefundable
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="border-b py-4 border-gray-200">
-            <div
-              data-menu
-              class="flex justify-between items-center cursor-pointer"
-            >
-              <p class="text-base leading-4 text-gray-800 dark:text-gray-300">
-                Contact us
-              </p>
-              <button
-                class="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded"
-                aria-label="show or hide"
-              >
-                <svg
-                  class="transform text-gray-300 dark:text-white"
-                  width="10"
-                  height="6"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 1L5 5L1 1"
-                    stroke="currentColor"
-                    stroke-width="1.25"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 dark:text-gray-300"
-              id="sect"
-            >
-              If you have any questions on how to return your item to us,
-              contact us.
-            </div>
-          </div>
         </div>
       </div>
     </>

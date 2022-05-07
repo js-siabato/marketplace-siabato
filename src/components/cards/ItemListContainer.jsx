@@ -19,7 +19,7 @@ const ItemListContainer = () => {
       .catch((err) => {
         throw err;
       });
-  }, []);
+  });
 
   return (
     <section class="h-screen bg-gradient-to-br to-indigo-100 p-10">
