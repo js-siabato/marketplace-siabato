@@ -4,14 +4,14 @@ const ItemDetail = ({ productData }) => {
       <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
         <img
           className="w-full"
-          src={`../../assets/img/${productData.image}`}
+          src={productData.imageUrl}
           alt={productData.name}
         />
       </div>
       <div className="md:hidden">
         <img
           className="w-full"
-          src={`../../assets/img/${productData.image}`}
+          src={productData.imageUrl}
           alt={productData.name}
         />
       </div>
