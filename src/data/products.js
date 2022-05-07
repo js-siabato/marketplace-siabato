@@ -2,6 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Marshall Kilburn Portable Wireless",
+    category: 1,
     price: "10.000",
     image: "1.jpg",
     description:
@@ -12,6 +13,7 @@ export const products = [
   {
     id: 2,
     name: "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+    category: 1,
     price: "10.500",
     image: "2.jpg",
     description:
@@ -22,6 +24,7 @@ export const products = [
   {
     id: 3,
     name: "Xbox One Wireless Controller Black Color",
+    category: 2,
     price: "11.000",
     image: "3.jpg",
     description:
@@ -32,6 +35,7 @@ export const products = [
   {
     id: 4,
     name: "Sound Intone I65 Earphone White Version",
+    category: 2,
     price: "11.500",
     image: "4.jpg",
     description:
@@ -42,6 +46,40 @@ export const products = [
   {
     id: 5,
     name: "Samsung Gear VR Reality Headset",
+    category: 2,
+    price: "12.000",
+    image: "5.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    imageUrl:
+      "https://www.alkosto.com/medias/7707908633349-001-750Wx750H?context=bWFzdGVyfGltYWdlc3wxMDU4Njh8aW1hZ2UvanBlZ3xpbWFnZXMvaDNiL2hkMC8xMTA3OTg3MzY5MTY3OC5qcGd8NjU0NWY0M2QyMWQ0MDFlNTBhOTg3Njg4MDgwM2NmNTZhNTllZmI4YWUxZGJlZjNkNDUxZmM0M2U0MWVkYzBlZg",
+  },
+  {
+    id: 6,
+    name: "Sound Intone I65 Earphone White Version",
+    category: 3,
+    price: "11.500",
+    image: "4.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    imageUrl:
+      "https://esika.tiendabelcorp.com/cdn-cgi/image/width=444,fit=contain,f=auto/https://belc-bigdata-mdm-images-prd.s3.amazonaws.com/images/FotoProductoFondoBlancoWebRedes/210096523-producto.jpg",
+  },
+  {
+    id: 7,
+    name: "Samsung Gear VR Reality Headset",
+    category: 4,
+    price: "12.000",
+    image: "5.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    imageUrl:
+      "https://www.alkosto.com/medias/7707908633349-001-750Wx750H?context=bWFzdGVyfGltYWdlc3wxMDU4Njh8aW1hZ2UvanBlZ3xpbWFnZXMvaDNiL2hkMC8xMTA3OTg3MzY5MTY3OC5qcGd8NjU0NWY0M2QyMWQ0MDFlNTBhOTg3Njg4MDgwM2NmNTZhNTllZmI4YWUxZGJlZjNkNDUxZmM0M2U0MWVkYzBlZg",
+  },
+  {
+    id: 8,
+    name: "Samsung Gear VR Reality Headset",
+    category: 4,
     price: "12.000",
     image: "5.jpg",
     description:
