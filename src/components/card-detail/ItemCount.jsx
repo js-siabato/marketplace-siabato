@@ -1,34 +1,46 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useCartContext } from "../../context/CartContextProvider";
-import ItemCount from "./ItemCount";
+import React, { useState } from "react";
 
-const ItemDetail = ({ product }) => {
-  const [buy, setBuy] = useState(false);
-  const { addToCart } = useCartContext();
+const ItemCount = ({ initial, stock, onAdd }) => {
+  const [count, setCount] = useState(initial);
 
-  function handleOnAdd(count) {
-    addToCart(product, count);
-    setBuy(true);
-  }
+  const handleSubtract = () => {
+    if (count > initial) {
+      setCount((counter) => counter - 1);
+    }
+  };
+  const handleAdd = () => {
+    if (count < stock) {
+      setCount((counter) => counter + 1);
+    }
+  };
 
   return (
     <>
-      <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-        <img className="w-full" src={product.imageUrl} alt={product.name} />
-      </div>
-      <div className="md:hidden">
-        <img className="w-full" src={product.imageUrl} alt={product.name} />
-      </div>
-      <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-        <div className="border-b border-gray-200 pb-6">
-          <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">
-            {product.name}
-          </h1>
-        </div>
-        {buy ? (
-          <Link
-            to="/cart"
+      {stock !== 0 ? (
+        <>
+          <div className="custom-number-input h-10 w-32">
+            <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+              <button
+                onClick={handleSubtract}
+                className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+              >
+                <span className="m-auto text-2xl font-thin">-</span>
+              </button>
+              <input
+                className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+                name="custom-input-number"
+                value={count}
+              ></input>
+              <button
+                onClick={handleAdd}
+                className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+              >
+                <span className="m-auto text-2xl font-thin">+</span>
+              </button>
+            </div>
+          </div>
+          <button
+            onClick={() => onAdd(count)}
             className="dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-gray-800 w-full py-4 hover:bg-gray-700 focus:outline-none"
           >
             <svg
@@ -68,22 +80,16 @@ const ItemDetail = ({ product }) => {
                 strokeLinejoin="round"
               />
             </svg>
-            Buy
-          </Link>
-        ) : (
-          <ItemCount initial={1} stock={product.stock} onAdd={handleOnAdd} />
-        )}
-        <div>
-          <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7">
-            <strong>Price:</strong> <br /> ${product.price}
-          </p>
-          <p className="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">
-            <strong>Description:</strong> <br /> {product.description}
-          </p>
-        </div>
-      </div>
+            Add Cart
+          </button>
+        </>
+      ) : (
+        <h2>
+          <strong>Out of stock</strong>
+        </h2>
+      )}
     </>
   );
 };
 
-export default ItemDetail;
+export default ItemCount;

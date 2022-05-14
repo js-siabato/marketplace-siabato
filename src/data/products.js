@@ -4,6 +4,7 @@ export const products = [
     name: "Marshall Kilburn Portable Wireless",
     category: 1,
     price: "10.000",
+    stock: 2,
     image: "1.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -15,6 +16,7 @@ export const products = [
     name: "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
     category: 1,
     price: "10.500",
+    stock: 0,
     image: "2.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -26,6 +28,7 @@ export const products = [
     name: "Xbox One Wireless Controller Black Color",
     category: 2,
     price: "11.000",
+    stock: 10,
     image: "3.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -37,6 +40,7 @@ export const products = [
     name: "Sound Intone I65 Earphone White Version",
     category: 2,
     price: "11.500",
+    stock: 5,
     image: "4.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -48,6 +52,7 @@ export const products = [
     name: "Samsung Gear VR Reality Headset",
     category: 2,
     price: "12.000",
+    stock: 5,
     image: "5.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -59,6 +64,7 @@ export const products = [
     name: "Sound Intone I65 Earphone White Version",
     category: 3,
     price: "11.500",
+    stock: 5,
     image: "4.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -70,6 +76,7 @@ export const products = [
     name: "Samsung Gear VR Reality Headset",
     category: 4,
     price: "12.000",
+    stock: 3,
     image: "5.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",
@@ -81,6 +88,7 @@ export const products = [
     name: "Samsung Gear VR Reality Headset",
     category: 4,
     price: "12.000",
+    stock: 5,
     image: "5.jpg",
     description:
       "It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.",

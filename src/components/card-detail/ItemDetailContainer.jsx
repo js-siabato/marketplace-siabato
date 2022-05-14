@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../Loading";
 import { products as productsData } from "../../data/products";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
+  const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
   const { id } = useParams();
 
@@ -17,6 +19,7 @@ const ItemDetailContainer = () => {
     getProductDetail
       .then((result) => {
         setProduct(result);
+        setLoading(false);
       })
       .catch((err) => {
         throw err;
@@ -25,7 +28,11 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
-      <ItemDetail key={product.id} productData={product} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <ItemDetail key={product.id} product={product} />
+      )}
     </div>
   );
 };

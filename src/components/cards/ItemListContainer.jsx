@@ -32,15 +32,15 @@ const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <section class="h-screen bg-gradient-to-br to-indigo-100 p-10">
-      <h1 class="text-center font-bold text-2xl text-indigo-500">
+    <section className="h-screen bg-gradient-to-br to-indigo-100 p-10">
+      <h1 className="text-center font-bold text-2xl text-indigo-500">
         {!id && "TODOS NUESTROS PRODUCTO"}
       </h1>
 
       {loading ? (
         <Loading />
       ) : (
-        <div class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
+        <div className="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
           <ItemList products={products} />
         </div>
       )}
