@@ -39,9 +39,9 @@ function NavBar() {
                     src={logo}
                     alt="logo"
                   />
-                  <a href="/" className="font-bold text-lg">
+                  <Link to="/" className="font-bold text-lg">
                     MARKETPLACE
-                  </a>
+                  </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

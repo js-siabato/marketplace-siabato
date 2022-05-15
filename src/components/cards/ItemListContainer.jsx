@@ -1,6 +1,6 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { products as productsData } from "../../data/products";
 import Loading from "../Loading";
 import ItemList from "./ItemList";
 
@@ -11,25 +11,25 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (id === undefined) {
-          resolve(productsData);
-        } else {
-          resolve(productsData.filter((product) => product.category == id));
-        }
-      }, 2000);
-    });
-
-    getProducts
-      .then((result) => {
-        setProducts(result);
-        setLoading(false);
-      })
-      .catch((err) => {
-        throw err;
-      });
+    getProducts();
   }, [id]);
+
+  const getProducts = () => {
+    const db = getFirestore();
+    const productsCollection = collection(db, "products");
+    getDocs(productsCollection).then((snapshot) => {
+      const productsData = snapshot.docs.map((product) => ({
+        id: product.id,
+        ...product.data(),
+      }));
+      if (id === undefined) {
+        setProducts(productsData);
+      } else {
+        setProducts(productsData.filter((products) => products.category == id));
+      }
+    });
+    setLoading(false);
+  };
 
   return (
     <section className="h-screen bg-gradient-to-br to-indigo-100 p-10">

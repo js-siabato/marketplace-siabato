@@ -2,19 +2,27 @@ import React from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContextProvider";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const CartWidget = () => {
+  const { cartList } = useCartContext();
+
   return (
     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
       <Link
         to="/cart"
         type="button"
-        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+        className="relative bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
       >
+        {cartList.length !== 0 && (
+          <div class="absolute top-0 right-0 -mt-3 -mr-2 px-2 py-0 bg-red-600 rounded-full">
+            {cartList.length}
+          </div>
+        )}
         <span className="sr-only">View shopping cart</span>
         <svg
           className="h-6 w-6"

@@ -11,21 +11,28 @@ const CartContextProvider = ({ children }) => {
     if (isInCart(item.id)) {
       return setCartList(
         cartList.map((product) =>
-          product.id == item.id
+          product.item.id == item.id
             ? { ...product, quantity: product.quantity + quantity }
             : product
         )
       );
     }
-    setCartList([...cartList, { ...item, quantity }]);
+    setCartList([...cartList, { item, quantity }]);
   }
 
   const isInCart = (id) => {
-    return cartList.some((item) => item.id == id);
+    return cartList.some((product) => product.item.id == id);
   };
 
+  function deleteFromCart(id) {
+    const updateCart = cartList.filter((product) => product.item.id != id);
+    setCartList(updateCart);
+  }
+
   const context = {
+    cartList,
     addToCart,
+    deleteFromCart,
   };
 
   return (
