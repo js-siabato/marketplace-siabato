@@ -29,10 +29,28 @@ const CartContextProvider = ({ children }) => {
     setCartList(updateCart);
   }
 
+  function getTotalPrice() {
+    let total = 0;
+    cartList.map((product) => {
+      total = total + product.item.price * product.quantity;
+    });
+    return total;
+  }
+
+  function getTotalItems() {
+    let totalItems = 0;
+    cartList.map((product) => {
+      totalItems = totalItems + product.quantity;
+    });
+    return totalItems;
+  }
+
   const context = {
     cartList,
     addToCart,
     deleteFromCart,
+    getTotalPrice,
+    getTotalItems,
   };
 
   return (

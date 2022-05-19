@@ -3,13 +3,19 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContextProvider";
+import { useEffect, useState } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const CartWidget = () => {
-  const { cartList } = useCartContext();
+  const [totalItems, setTotalItems] = useState(0);
+  const { getTotalItems } = useCartContext();
+
+  useEffect(() => {
+    setTotalItems(getTotalItems);
+  });
 
   return (
     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -18,9 +24,9 @@ const CartWidget = () => {
         type="button"
         className="relative bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
       >
-        {cartList.length !== 0 && (
-          <div class="absolute top-0 right-0 -mt-3 -mr-2 px-2 py-0 bg-red-600 rounded-full">
-            {cartList.length}
+        {totalItems !== 0 && (
+          <div className="absolute top-0 right-0 -mt-3 -mr-2 px-2 py-0 bg-red-600 rounded-full">
+            {totalItems}
           </div>
         )}
         <span className="sr-only">View shopping cart</span>
